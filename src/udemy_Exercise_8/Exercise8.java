@@ -4,19 +4,14 @@ interface Machine {
 }
 
 
-
-
- class Appliance implements Machine{
+abstract class Appliance implements Machine {
     String name;
+
     Appliance(String name) {
         this.name = name;
     }
-    public String start(){
-        return "";
-    };
+
 }
-
-
 
 
 class Fan extends Appliance {
@@ -25,17 +20,17 @@ class Fan extends Appliance {
     }
 
     @Override
-   public String start() {
+    public String start() {
         return "Fan is running";
     }
 }
-
 
 
 class WashingMachine extends Appliance {
     WashingMachine(String name) {
         super(name);
     }
+
     @Override
     public String start() {
         return "Washing Machine is operating";
