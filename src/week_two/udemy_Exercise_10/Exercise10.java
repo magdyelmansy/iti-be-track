@@ -8,7 +8,7 @@ class InvalidAgeException extends Exception {
 }
 
 
-public class Exercise {
+public class Exercise10 {
 
     public static void checkAge(int age) throws InvalidAgeException {
         // TODO: Throw custom exception if age < 18, else print "Access granted"
