@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -40,11 +41,17 @@ public class JobRepo {
     }
 
     // method to save a job post object into arrayList
-    public void addJob(JobPost job) {
+    public JobPost addJob(JobPost job) {
         jobs.add(job);
-        System.out.println(jobs);
+        return job;
+
 
     }
 
 
+    public List<JobPost> getJob(int postId) {
+       return !jobs.stream().filter(job -> job.getPostId() == postId).toList().isEmpty()?
+               jobs.stream().filter(job -> job.getPostId() == postId).toList() :
+               Collections.emptyList();
+    }
 }
